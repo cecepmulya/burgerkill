@@ -1,96 +1,91 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>CecepMulya – Web Developer from Somewhere</title>
-
-        <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-
-    
     <meta name="description" content="Web Developer from Somewhere">
     <meta property="og:description" content="Web Developer from Somewhere" />
-    
     <meta name="author" content="CecepMulya" />
-
-    
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    
     <link rel="shortcut icon" href="http://soundwave.mw.lt/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="/blog/style.css" />
-    <!-- Created with CecepMulya-->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171245819-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171245819-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-171245819-1');
+    </script>
+    <style>
+      .rotating {
+        animation: rotate 5s linear infinite; /* Adjust duration as needed */
+        animation-play-state: paused; /* Initially paused */
+      }
 
-  gtag('config', 'UA-171245819-1');
-</script>
-
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg); /* Or -360deg for counter-clockwise */
+        }
+        to {
+          transform: rotate(360deg); /* Or 0deg for counter-clockwise */
+        }
+      }
+    </style>
   </head>
-
   <body>
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
           <a href="/burgerkill/" class="site-avatar"><img src="https://avatars1.githubusercontent.com/u/15279700?s=460&u=3472b7cbfd7d1bf9dc4520ce06d1e3a8dfd4d50a&v=4" /></a>
-
           <div class="site-info">
             <h1 class="site-name"><a href="/burgerkill/">CecepMulya</a></h1>
             <p class="site-description">Web Developer from Somewhere</p>
           </div>
-
-          
         </header>
       </div>
     </div>
 
     <div id="main" role="main" class="container">
       <div class="posts">
-  
-    <article class="post">
-
-      <div class="entry">
-        <div style="text-align:center;padding:5%"><img src="/blog/images/suliet.png" style="width:70%;" /></div>
-<audio __idm_id__="907968513" controls="" preload="metadata" style="width:100%;"><source src="https://github.com/cecepmulya/js/raw/master/03%20-%20Burgerkill%20-%20Berkarat.mp3" type="audio/mp3" /></audio>
-</div>
-
-
+        <article class="post">
+          <div class="entry">
+            <div style="text-align:center;padding:5%;">
+              <img id="sulietImage" src="/blog/images/suliet.png" style="width:70%;" class="rotating" />
+            </div>
+            <audio id="myAudio" controls="" preload="metadata" style="width:100%;">
+              <source src="https://github.com/cecepmulya/js/raw/master/03%20-%20Burgerkill%20-%20Berkarat.mp3" type="audio/mp3" />
+            </audio>
+          </div>
+        </article>
       </div>
-
-    </article>
-  
-</div>
     </div>
 
     <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
-          
-<a href="mailto:me@cecep.my.id"><i class="svg-icon email"></i></a>
-<a href="https://www.facebook.com/utaja"><i class="svg-icon facebook"></i></a>
-
-<a href="https://github.com/CecepMulya"><i class="svg-icon github"></i></a>
-<a href="https://instagram.com/CecepMulya"><i class="svg-icon instagram"></i></a>
-
-<a href="https://www.pinterest.com/CecepMulya"><i class="svg-icon pinterest"></i></a>
-
-<a href="https://www.twitter.com/CecepSan"><i class="svg-icon twitter"></i></a>
-
-
-
+          <a href="mailto:me@cecep.my.id"><i class="svg-icon email"></i></a>
+          <a href="https://www.facebook.com/utaja"><i class="svg-icon facebook"></i></a>
+          <a href="https://github.com/CecepMulya"><i class="svg-icon github"></i></a>
+          <a href="https://instagram.com/CecepMulya"><i class="svg-icon instagram"></i></a>
+          <a href="https://www.pinterest.com/CecepMulya"><i class="svg-icon pinterest"></i></a>
+          <a href="https://www.twitter.com/CecepSan"><i class="svg-icon twitter"></i></a>
         </footer>
       </div>
     </div>
 
-    
+    <script>
+      const audio = document.getElementById('myAudio');
+      const sulietImage = document.getElementById('sulietImage');
 
+      audio.addEventListener('play', () => {
+        sulietImage.style.animationPlayState = 'running';
+      });
+
+      audio.addEventListener('pause', () => {
+        sulietImage.style.animationPlayState = 'paused';
+      });
+    </script>
   </body>
 </html>
